@@ -7,16 +7,17 @@ services:
       context: ./app
     ports:
       - "5000:5000"
-    restart: always
-
   nginx:
     container_name: containerize_nginx_1
     # your code goes here ...
     build:
-      context: ./nginx
+      context: ./nginx        
     ports:
-      - "8080:80"
-      - "8443:443"
+      - "443:443"
+      - "8880:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/files/localhost.crt:/etc/ssl/certs/localhost.crt
+      - ./nginx/files/localhost.key:/etc/ssl/private/localhost.key
     depends_on:
       - app
-    restart: always
