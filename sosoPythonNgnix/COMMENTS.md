@@ -14,3 +14,12 @@ the fact that I decide to go with Alpine because
 the size is smaller that the other docker images , to 
 reduce the size of image
 
+Open the port 443 to the inbound traffic 
+to run the docker-compose , use the command 
+" "
+To see the application on the browser use the public Ip address and attached the port 
+where teh application is listening to : 
+ - http://3.15.145.228:8880/
+
+
+ 
