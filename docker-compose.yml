@@ -3,6 +3,20 @@ services:
   app:
     container_name: containerize_app_1
     # your code goes here ...
+    build:
+      context: ./app
+    ports:
+      - "5000:5000"
+    restart: always
+    
   nginx:
     container_name: containerize_nginx_1
     # your code goes here ...
+    build:
+      context: ./nginx
+    ports:
+      - "8880:80"
+      - "8443:443"
+    depends_on:
+      - app
+    restart: always
