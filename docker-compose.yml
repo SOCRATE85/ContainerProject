@@ -1,3 +1,5 @@
+Le docker-compose.yml
+
 version: "3"
 services:
   app:
@@ -13,8 +15,8 @@ services:
     build:
       context: ./nginx        
     ports:
-      - "80:80"
       - "443:443"
+      - "8000:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/files/localhost.crt:/etc/ssl/certs/localhost.crt
