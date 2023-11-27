@@ -6,18 +6,17 @@ services:
     build:
       context: ./app
     ports:
-      - "8000:5000"
+      - "8000:8000"
   nginx:
     container_name: containerize_nginx_1
     # your code goes here ...
     build:
       context: ./nginx        
     ports:
+      - "80:80"
       - "443:443"
-      - "8000:80"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/files/localhost.crt:/etc/ssl/certs/localhost.crt
-      - ./nginx/files/localhost.key:/etc/ssl/private/localhost.key
     depends_on:
       - app
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/files:/etc/nginx/certs
