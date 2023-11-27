@@ -1,25 +1,21 @@
-This is where I suppose to add all the Comments Or Suggestion 
-
 I Launched the Linux VM on AWS and installed Docker and Docker-composed
-
-this is the link I followed to do so : 
-  -- https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/
-
-  Start the Docker service:
+Start the Docker service:
 sudo systemctl start docker.service
 
-The reason we dont keep python 2, is because on 
-the DockerHub ,
-the fact that I decide to go with Alpine because 
-the size is smaller that the other docker images , to 
-reduce the size of image
+The reason I dont keep python 2, is because on 
+the DockerHub I didnt wanted t,
+I also decide to go with Alpine because it help 
+me reduce the size of the image , and I think 
+that the size is smaller that the other docker images 
 
-Open the port 443 to the inbound traffic 
+I Opened the port 443 to the inbound traffic 
 to run the docker-compose , use the command 
-" "
-To see the application on the browser use the public Ip address and attached the port 
-where teh application is listening to : 
- - http://3.15.145.228:8880/
+"docker-compose up --build "
+
+To see the application on the browser I use the public Ip address and attached the port 
+where the application is listening to : 
+ - http://3.15.145.228:8080/
 
 
- 
+
+
